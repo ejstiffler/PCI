@@ -37,6 +37,7 @@
 	<body id="page-top">
 
 		<header>
+		<?php include("header.php")?>
 			<div class="header-content" id = "home">
 				<div class="header-content-inner">
 					<h1 id="homeHeading">Quaid's Vision</h1><br>		
