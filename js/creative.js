@@ -1,11 +1,16 @@
-$(document).ready(function() {
+$(document).ready(function () {
+
+	// on successful signup
+
+	//$('#successAlert').hide();
+
 	"use strict"; // Start of use strict
 
 	// jQuery for page scrolling feature - requires jQuery Easing plugin
-	$(document).on('click', 'a.page-scroll', function(event) {
+	$(document).on('click', 'a.page-scroll', function (event) {
 		var $anchor = $(this);
 		$('html, body').stop().animate({
-			scrollTop: ($($anchor.attr('href')).offset().top-50)
+			scrollTop: ($($anchor.attr('href')).offset().top - 50)
 		}, 1250, 'easeInOutExpo');
 		event.preventDefault();
 	});
@@ -17,7 +22,7 @@ $(document).ready(function() {
 	});
 
 	// Closes the Responsive Menu on Menu Item Click
-	$('.navbar-collapse ul li a').click(function() {
+	$('.navbar-collapse ul li a').click(function () {
 		$('.navbar-toggle:visible').click();
 	});
 
@@ -65,8 +70,8 @@ $(document).ready(function() {
 
 	var validator = $("#registration-form").bootstrapValidator({
 
-		fields:{
-			username:{
+		fields: {
+			username: {
 				message: "Username must be entered",
 				validators: {
 					notEmpty: {
@@ -77,7 +82,7 @@ $(document).ready(function() {
 						max: 10,
 						message: "Username must be between 4 and 10 characters long"
 					},
-					notdigits:{
+					notdigits: {
 						message: "Username can not be digits"
 					}
 
@@ -85,10 +90,10 @@ $(document).ready(function() {
 			},
 			email: {
 				message: "Email address is required",
-				validators:{
-					notEmpty:{
-						message : "Please provide an email address"
-					}, 
+				validators: {
+					notEmpty: {
+						message: "Please provide an email address"
+					},
 					stringLength: {
 						min: 6,
 						max: 35,
@@ -108,4 +113,7 @@ $(document).ready(function() {
 	});
 
 
-})(jQuery); // End of use strict
+
+
+
+}); // End of use strict
