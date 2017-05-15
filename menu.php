@@ -28,10 +28,10 @@
                     <!--							<a class="page-scroll" href="#contact">Contact</a>-->
                 </li>
                 <li>
-                    <a class = "page-scroll" href="LogIn.html">Login</a>
+                    <a class = "page-scroll" href="login.php">Login</a>
                 </li>
                 <li>
-                    <a class = "page-scroll" href="signUp.html">Sign Up</a>
+                    <a class = "page-scroll" href="SignUp.php">Sign Up</a>
                 </li>
             </ul>
         </div>
