@@ -76,7 +76,7 @@ if (isset($_POST['username'])) {
 						<li class="active">Registration</li>
 					</ul>
 
-					<div class="alert alert-success alert-block fade in collapse" id="successAlert">
+					<div class="alert alert-success collapse" id="successAlert">
 						<button class="close" type="button" data-dismiss="alert">&times;</button>
 						<h4>Success!</h4>
 						<p>
@@ -96,68 +96,66 @@ if (isset($_POST['username'])) {
 									<div class="row padding-top-30">
 										<div class="col-md-12">
 											<input class="form-control" id="username" name="username" placeholder="User Name" data-toggle="validate" data-bv-field="username" type="text">
-											<small style="display: none;" class="help-block" data-bv-validator="notEmpty" data-bv-for="username" data-bv-result="NOT_VALIDATED">Please provide a username</small><small style="display: none;" class="help-block" data-bv-validator="stringLength" data-bv-for="username" data-bv-result="NOT_VALIDATED">Username must be between 4 and 10 characters long</small></div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row padding-top-30">
+											<div class="col-md-12">
+												<input class="form-control" id="email" name="email" placeholder="Email" data-bv-field="email" type="email">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row padding-top-30">
+											<div class="col-md-12">
+												<input class="form-control" id="cnic" name="cnic" placeholder="CNIC" type="text">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row padding-top-30">
+											<div class="col-md-12">
+												<input class="form-control" id="passport" name="passport" placeholder="Passport" type="text">
+											</div>
+										</div>
+									</div>
 
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row padding-top-30">
-										<div class="col-md-12">
-											<input class="form-control" id="email" name="email" placeholder="Email" data-bv-field="email" type="email">
-											<small style="display: none;" class="help-block" data-bv-validator="notEmpty" data-bv-for="email" data-bv-result="NOT_VALIDATED">Please provide an email address</small><small style="display: none;" class="help-block" data-bv-validator="stringLength" data-bv-for="email" data-bv-result="NOT_VALIDATED">Email must be between 6 to 35 characters long</small><small style="display: none;" class="help-block" data-bv-validator="different" data-bv-for="email" data-bv-result="NOT_VALIDATED">Email and Password must be different</small><small style="display: none;" class="help-block" data-bv-validator="emailAddress" data-bv-for="email" data-bv-result="NOT_VALIDATED">Email Address is invalid</small></div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row padding-top-30">
-										<div class="col-md-12">
-											<input class="form-control" id="cnic" name="cnic" placeholder="CNIC" type="text">
+									<div class="form-group">
+										<div class="row padding-top-30">
+											<div class="col-md-12">
+												<input class="form-control" id="password" name="password" placeholder="Password" type="password">
+											</div>
 										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<div class="row padding-top-30">
-										<div class="col-md-12">
-											<input class="form-control" id="passport" name="passport" placeholder="Passport" type="text">
+									<div class="form-group">
+										<div class="row padding-top-30">
+											<div class="col-md-12">
+												<input class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" type="password">
+											</div>
 										</div>
 									</div>
-								</div>
-
-								<div class="form-group">
-									<div class="row padding-top-30">
-										<div class="col-md-12">
-											<input class="form-control" id="password" name="password" placeholder="Password" type="password">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row padding-top-30">
-										<div class="col-md-12">
-											<input class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" type="password">
-										</div>
-									</div>
-								</div>
-								<div class="form-group">
-									<div class="row padding-top-30">
-										<div class="col-md-8 col-md-offset-2">
-											<input type="submit" value="Submit" class="btn btn-primary btn-block" />
-											<!--
+									<div class="form-group">
+										<div class="row padding-top-30">
+											<div class="col-md-8 col-md-offset-2">
+												<input type="submit" value="Submit" class="btn btn-primary btn-block" />
+												<!--
 <div style="color:red">
 <?= $message ?>
 </div>
 -->
+											</div>
 										</div>
 									</div>
-								</div>
 
 							</form>
+							</div>
 						</div>
+						<p class="text-muted text-center">Already a member? <a href="LogIn.html" style="color:white">Log In Now</a></p>
+						<p class="text-center"><a href="index.html" style="color:white">Go back to Home</a></p>
+
 					</div>
-					<p class="text-muted text-center">Already a member? <a href="LogIn.html" style="color:white">Log In Now</a></p>
-					<p class="text-center"><a href="index.html" style="color:white">Go back to Home</a></p>
 
 				</div>
-
-			</div>
 
 		</section>
 
@@ -191,7 +189,7 @@ if (isset($_POST['username'])) {
 } else {
 	echo '<script type="text/javascript">$(function() { $("#successAlert").hide(); });</script>';
 }
-		?>
+			?>
 	</body>
 	<!-- <script type="text/javascript">
 
