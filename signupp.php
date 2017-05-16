@@ -10,13 +10,19 @@ if (isset($_POST['username'])) {
 	$cnic = $_POST['cnic'];
 	$passport = $_POST['passport'];
 	$password = $_POST['password'];
-
-	$sql = "INSERT INTO  users(UserName,Email,CNIC,Passport,Password)
-			VALUES ('" . $username . "','" . $email . "','" . $cnic . "','" . $passport . "','" . $password . "')";
-	if ($conn->query($sql) === TRUE) {
-		$message = "New record created successfully.";
-	} else {
-		$message = "<span>Error: " . $sql . "<br />" . $conn->error . "</span>";
+	
+	$checkCNICsql = "SELECT CNIC FROM users WHERE CNIC='$cnic'";
+    $rs = mysqli_query($conn, $checkCNICsql);
+    if ($row = mysqli_fetch_assoc($rs)) {
+        $message = "CNIC alreay exists";
+    } else {
+		$sql = "INSERT INTO  users(UserName,Email,CNIC,Passport,Password)
+				VALUES ('" . $username . "','" . $email . "','" . $cnic . "','" . $passport . "','" . $password . "')";
+		if ($conn->query($sql) === TRUE) {
+			$message = "New record created successfully.";
+		} else {
+			$message = "<span>Error: " . $sql . "<br />" . $conn->error . "</span>";
+		}
 	}
 }
 ?>
