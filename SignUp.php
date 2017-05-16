@@ -90,12 +90,12 @@ if (isset($_POST['username'])) {
 						<div class="panel-body">
 
 							<!--									<label for="firstName" class="control-label " >Name:</label>-->
-							<form id="registration-form" method="POST" action="SignUp.php" novalidate="novalidate" class="bv-form">
-								<button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+							<form id="registration-form" method="POST" action="SignUp.php">
+
 								<div class="form-group">
 									<div class="row padding-top-30">
 										<div class="col-md-12">
-											<input class="form-control" id="username" name="username" placeholder="User Name" data-toggle="validate" data-bv-field="username" type="text">
+											<input class="form-control" id="username" name="username" placeholder="User Name" type="text">
 										</div>
 									</div>
 									<div class="form-group">

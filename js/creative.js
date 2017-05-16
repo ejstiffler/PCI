@@ -75,7 +75,7 @@ $(document).ready(function () {
 				message: "Username must be entered",
 				validators: {
 					notEmpty: {
-						message: "Please provide a username",
+						message: "Please provide a use",
 					},
 					stringLength: {
 						min: 4,
