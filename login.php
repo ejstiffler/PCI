@@ -15,7 +15,7 @@ if (isset($_POST['cnic'])) {
     $str = "SELECT * FROM users WHERE CNIC='$cnic' && Password='$password' ";
     $sql = mysqli_query($conn, $str);
 
-    while ($row = mysqli_fetch_assoc($sql)) {
+    if ($row = mysqli_fetch_assoc($sql)) {
         $dbCnic = $row["CNIC"];
         $dbPassword = $row["Password"];
         if ($dbCnic == $cnic && $dbPassword == $password) {
