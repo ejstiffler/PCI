@@ -78,46 +78,54 @@ if (isset($_POST['cnic'])) {
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
                         <ul class="breadcrumb" id="loginbread">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="index.php">Home</a></li>
                             <li><a href="signUp.php">Registration</a></li>
                             <li class="active">Log In</li>
                         </ul>
+                        <div class="alert alert-danger collapse" id = "errorAlert">
+                            <button class="close" type="button" data-dismiss ="alert">&times;</button>
+                            <h4>Error</h4>
+                            <p>
+                                <?= $message ?>
+                            </p>
+
+                        </div>
                         <div class="panel panel-default">
 
                             <div class="panel-heading text-center padding-top-30">LOG IN
-                                <br />
-                            <?= $str ?></div>
-                            <div class="panel-body">
-                                <form method="post" action="login.php">
-                                    <!--									<label for="firstName" class="control-label " >Name:</label>-->
-                                    <div class="form-group">
-                                        <div class="row padding-top-30">
-                                            <div class="col-md-12">
-                                                <input type="text" class="form-control" name="cnic" id="passport" placeholder="CNIC">
-                                                <!-- placeholder = "CNIC/Passport" -->
+                                <div class="panel-body">
+                                    <form id="login-Form" method="post" action="login.php">
+                                        <!--									<label for="firstName" class="control-label " >Name:</label>-->
+                                        <div class="form-group">
+                                            <div class="row padding-top-30">
+                                                <div class="col-md-12">
+                                                    <input type="text" class="form-control" name="cnic" id="cnic" placeholder="CNIC">
+
+                                                </div>
+
                                             </div>
 
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="row padding-top-30">
-                                            <div class="col-md-12">
-                                                <input type="password" class="form-control" name="password" id="Password" placeholder="Password">
-                                            </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row padding-top-30">
+                                        <div class="col-md-12">
+                                            <input type="password" class="form-control" name="password" id="Password" placeholder="Password">
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div class="form-group">
-                                        <div class="row padding-top-30">
-                                            <div class="col-md-12">
-                                                <input type="submit" value="Submit" class="btn btn-primary btn-block" />
-                                            </div>
+                                <div class="form-group">
+                                    <div class="row padding-top-30">
+                                        <div class="col-md-12">
+                                            <input type="submit" value="Submit" class="btn btn-primary btn-block" />
                                         </div>
                                     </div>
+                                </div>
 
-                                    <div style="color:red">
-                                        <?= $message ?>
-                                    </div>
+                                <div style="color:red">
+                                    <?= $message ?>
+                                </div>
 
                                 </form>
 
@@ -153,6 +161,14 @@ if (isset($_POST['cnic'])) {
 
         <script src="js/creative.js"></script>
 
+
+        <?php
+        if (isset($message) && strlen($message) > 1) {
+            echo '<script type="text/javascript">$(function() { $("#errorAlert").slideDown(); });</script>';
+        } else {
+            echo '<script type="text/javascript">$(function() { $("#errorAlert").hide(); });</script>';
+        }
+        ?>
 
     </body>
 
