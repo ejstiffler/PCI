@@ -94,8 +94,8 @@ if (isset($_POST['cnic'])) {
 
                             <div class="panel-heading text-center padding-top-30">LOG IN
                                 <div class="panel-body">
-                                    <form id="login-Form" method="post" action="login.php">
-                                        <!--									<label for="firstName" class="control-label " >Name:</label>-->
+                                    <form id="loginForm" method="post" action="login.php">
+                                        <!--<label for="firstName" class="control-label " >Name:</label>-->
                                         <div class="form-group">
                                             <div class="row padding-top-30">
                                                 <div class="col-md-12">
@@ -104,9 +104,7 @@ if (isset($_POST['cnic'])) {
                                                 </div>
 
                                             </div>
-
                                         </div>
-                                </div>
                                 <div class="form-group">
                                     <div class="row padding-top-30">
                                         <div class="col-md-12">
@@ -127,16 +125,18 @@ if (isset($_POST['cnic'])) {
                                     <?= $message ?>
                                 </div>
 
-                                </form>
 
+                                    </form>
+
+                                </div>
                             </div>
                         </div>
                         <p class="text-muted text-center">Not a member? <a href="SignUp.php" style="color:white">Sign Up Now</a></p>
                         <p class="text-center"><a href="index.php" style="color:white">Go back to Home</a></p>
-                    </div>
-                </div>
 
-            </div>
+                    </div>
+
+                </div>
 
         </section>
 

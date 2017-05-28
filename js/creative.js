@@ -1,8 +1,5 @@
 $(document).ready(function () {
 
-// on successful signup
-
-//$('#successAlert').hide();
 
     "use strict"; // Start of use strict
 
@@ -14,11 +11,13 @@ $(document).ready(function () {
         }, 1250, 'easeInOutExpo');
         event.preventDefault();
     });
+
     // Highlight the top nav as scrolling occurs
     $('body').scrollspy({
         target: '.navbar-fixed-top',
         offset: 51
     });
+
     // Closes the Responsive Menu on Menu Item Click
     $('.navbar-collapse ul li a').click(function () {
         $('.navbar-toggle:visible').click();
@@ -155,7 +154,7 @@ $(document).ready(function () {
     });
 
     // Login Form Validation
-    var validator2 = $("#login-Form").bootstrapValidator({
+    var validator2 = $("#loginForm").bootstrapValidator({
 
         fields: {
             cnic: {
@@ -192,5 +191,6 @@ $(document).ready(function () {
         }
 
     });
+
 
 }); // End of use strict
