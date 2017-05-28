@@ -1,4 +1,4 @@
 <?php
 
-$servername = "localhost"; $username = "root"; $password = "root"; $dbname = "pci"; $message = "";
+$servername = "localhost"; $username = "root"; $password = ""; $dbname = "pci"; $message = "";
 ?>
