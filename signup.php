@@ -35,12 +35,12 @@ if (isset($_POST['username'])) {
         $sql = "INSERT INTO  users(UserName,Email,CNIC,Passport,Password)
 	VALUES ('" . $username . "','" . $email . "','" . $cnic . "','" . $passport . "','" . $password . "')";
         if ($conn->query($sql) === TRUE) {  
+
             $successMessage = "New record created successfully.";
         } else {
             $successMessage = "<span>Error: " . $sql . "<br />" . $conn->error . "</span>";
         }
     }
-    
 }
 ?>
 
@@ -54,7 +54,9 @@ if (isset($_POST['username'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
+
   
+
         <title>PCI - Sign Up</title>
 
         <!-- Bootstrap Core CSS -->
@@ -85,10 +87,10 @@ if (isset($_POST['username'])) {
             <div class="container">
 
 
-
                 <div class="col-md-4 col-md-offset-4">
                     <ul class="breadcrumb">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
+
                         <li class="active">Registration</li>
                     </ul>
                     <!--success message alert formation-->
@@ -102,7 +104,8 @@ if (isset($_POST['username'])) {
                     <!--error message alert formation-->
                     <div class="alert alert-danger collapse" id="errorAlert">
                         <button class="close" type="button" data-dismiss="alert">&times;</button>
-                        <h4>Success!</h4>
+
+                        <h4>Error!</h4>
                         <p>
                             <?= $errorMessage ?>
                         </p>
@@ -117,31 +120,36 @@ if (isset($_POST['username'])) {
                                 <div class="form-group" id="usernameID">
                                     <div class="row padding-top-30">
                                         <div class="col-md-12">
-                                            <input class="form-control" id="username" name="username" placeholder="User Name" type="text">
-                                            <span id="usernamespan"</span>
-                                        </div>
-                                        
 
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row padding-top-30">
-                                        <div class="col-md-12">
-                                            <input class="form-control" id="email" name="email" placeholder="Email" type="email">
+                                            <input class="form-control" id="usernameinput" name="username" placeholder="User Name" type="text">
+                                            <span id="usernamespan"></span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
+
+                                <div class="form-group" id = "emailID">
                                     <div class="row padding-top-30">
                                         <div class="col-md-12">
-                                            <input class="form-control" id="cnic" name="cnic" placeholder="CNIC" type="text">
+                                            <input class="form-control" id="emailinput" name="email" placeholder="Email" type="email">
+                                            <span id="emailspan"></span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group" id = "cnicID">
                                     <div class="row padding-top-30">
                                         <div class="col-md-12">
-                                            <input class="form-control" id="passport" name="passport" placeholder="Passport" type="text">
+
+                                            <input class="form-control" id="cnicinput" name="cnic" placeholder="CNIC" type="text">
+                                            <span id="cnicspan"></span>
+<!--                                            <img src="LoaderIcon.gif" id="loaderIcon" style="display:none" />-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" id = "passportID">
+                                    <div class="row padding-top-30">
+                                        <div class="col-md-12">
+                                            <input class="form-control" id="passportinput" name="passport" placeholder="Passport" type="text">
+                                            <span id="passportspan"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -172,7 +180,8 @@ if (isset($_POST['username'])) {
                         </div>
                     </div>
                     <p class="text-muted text-center">Already a member? <a href="LogIn.php" style="color:white">Log In Now</a></p>
-                    <p class="text-center"><a href="index.html" style="color:white">Go back to Home</a></p>
+                    <p class="text-center"><a href="index.php" style="color:white">Go back to Home</a></p>
+
 
                 </div>
 
@@ -203,6 +212,107 @@ if (isset($_POST['username'])) {
         <script src="js/creative.js"></script>
 
 
+<!--        <script type="text/javascript">
+            function checkAvailability() {
+                $("#loaderIcon").show();
+                jQuery.ajax({
+                    url: "check_cnic.php",
+                    data: 'username=' + $("#usernameinput").val(),
+                    type: "POST",
+                    success: function (data) {
+                        $("#usernamespan").html(data);
+                        $("#loaderIcon").hide();
+                    },
+                    error: function () {}
+                });
+            }
+        </script>-->
+        <script>
+
+//            For Username
+
+            $("#usernameinput").blur(function () {
+
+                var usr = $("#usernameinput").val();
+                if (usr != "") {
+                    $.post("check_username.php", {varnameusername: usr}, function (data) {
+                        if (usr.length >= 4) {
+                            if (data == 0) {
+                                $("#usernameID").addClass("has-error");
+                                $("#usernamespan").show();
+                                $("#usernamespan").html("<span class='status-not-available'> Username not available</span>");
+                            } else if (data == 1) {
+                                $("#usernameID").addClass("hass-success");
+                                $("#usernamespan").hide();
+                            }
+                        }
+                    });
+                }
+            });
+
+//            For Email
+
+            $("#emailinput").blur(function () {
+
+                var usr = $("#emailinput").val();
+                if (usr != "") {
+                    $.post("check_email.php", {varnameemail: usr}, function (data) {
+                        if (usr.length >= 4) {
+                            if (data == 0) {
+                                $("#emailID").addClass("has-error");
+                                $("#emailspan").show();
+                                $("#emailspan").html("<span class='status-not-available'> This email has already registered </span>");
+                            } else if (data == 1) {
+                                $("#emailID").addClass("hass-success");
+                                $("#emailspan").hide();
+                            }
+                        }
+                    });
+                }
+            });
+
+//            For CNIC
+
+            $("#cnicinput").blur(function () {
+
+                var usr = $("#cnicinput").val();
+                if (usr != "") {
+                    $.post("check_cnic.php", {varnamecnic: usr}, function (data) {
+                        if (usr.length >= 4) {
+                            if (data == 0) {
+                                $("#cnicID").addClass("has-error");
+                                $("#cnicspan").show();
+                                $("#cnicspan").html("<span class='status-not-available'> CNIC already in use</span>");
+                            } else if (data == 1) {
+                                $("#cnicID").addClass("hass-success");
+                                $("#cnicspan").hide();
+                            }
+                        }
+                    });
+                }
+            });
+
+            // For Passport
+
+            $("#passportinput").blur(function () {
+
+                var usr = $("#passportinput").val();
+                if (usr != "") {
+                    $.post("check_passport.php", {varnamepassport: usr}, function (data) {
+                        if (usr.length >= 4) {
+                            if (data == 0) {
+                                $("#passportID").addClass("has-error");
+                                $("#passportspan").show();
+                                $("#passportspan").html("<span class='status-not-available'> This passport is already  registered </span>");
+                            } else if (data == 1) {
+                                $("#passportID").addClass("hass-success");
+                                $("#passportspan").hide();
+                            }
+                        }
+                    });
+                }
+            });
+        </script>
 
 
         <?php

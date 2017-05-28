@@ -75,6 +75,7 @@
                         <h2 class="section-heading">Foreign Policy</h2>
                         <hr class="primary">
                     </div>
+                  
                 </div>
             </div>
             <div class="container">
