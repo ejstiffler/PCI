@@ -19,6 +19,10 @@ if (isset($_POST['cnic'])) {
         $dbCnic = $row["CNIC"];
         $dbPassword = $row["Password"];
         if ($dbCnic == $cnic && $dbPassword == $password) {
+           
+            session_start();
+            $_SESSION['UserName'] = $row['UserName'];
+
             header('location:index.php');
         }
     }
@@ -105,25 +109,25 @@ if (isset($_POST['cnic'])) {
 
                                             </div>
                                         </div>
-                                <div class="form-group">
-                                    <div class="row padding-top-30">
-                                        <div class="col-md-12">
-                                            <input type="password" class="form-control" name="password" id="Password" placeholder="Password">
+                                        <div class="form-group">
+                                            <div class="row padding-top-30">
+                                                <div class="col-md-12">
+                                                    <input type="password" class="form-control" name="password" id="Password" placeholder="Password">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <div class="row padding-top-30">
-                                        <div class="col-md-12">
-                                            <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                                        <div class="form-group">
+                                            <div class="row padding-top-30">
+                                                <div class="col-md-12">
+                                                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div style="color:red">
-                                    <?= $message ?>
-                                </div>
+                                        <div style="color:red">
+                                            <?= $message ?>
+                                        </div>
 
 
                                     </form>
