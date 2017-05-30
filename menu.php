@@ -27,12 +27,27 @@
                 <li>
                     <!--							<a class="page-scroll" href="#contact">Contact</a>-->
                 </li>
-                <li>
-                    <a class = "page-scroll" href="login.php">Login</a>
-                </li>
-                <li>
-                    <a class = "page-scroll" href="SignUp.php">Sign Up</a>
-                </li>
+                <?php
+                if (isset($_SESSION['UserName'])) {
+                    // logged in
+                    ?>
+                    <li>
+                        <a class = "page-scroll" href="personalInfo.php">Welcome <?= $_SESSION['UserName'] ?></a>
+                    </li>
+                    <?php
+                } else {
+                    ?>
+                    <li>
+                        <a class = "page-scroll" href="login.php">Login</a>
+                    </li>
+
+
+                    <li>
+                        <a class = "page-scroll" href="SignUp.php">Sign Up</a>
+                    </li>
+    <?php
+}
+?>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
