@@ -19,6 +19,8 @@ if (isset($_POST['cnic'])) {
         $dbCnic = $row["CNIC"];
         $dbPassword = $row["Password"];
         if ($dbCnic == $cnic && $dbPassword == $password) {
+            session_start();
+            $_SESSION['UserName'] = $row['UserName'];
             header('location:index.php');
         }
     }
@@ -123,6 +125,9 @@ if (isset($_POST['cnic'])) {
                                             </div>
                                         </div>
 
+                                        <div style="color:red">
+                                            <?= $message ?>
+                                        </div>
 
                                     </form>
                                 </div>
