@@ -16,14 +16,18 @@
                     <a class="page-scroll" href="#home">Home</a>
                 </li>
                 <li>
+                    <a class="page-scroll" href="#about">Consular Services</a>
+                </li>
+                <li>
                     <a class="page-scroll" href="#services">Foreign Policy</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#portfolio">Events</a>
+                    <a class="page-scroll" href="#kashmir">Kashmir Dispute</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about">Consular Services</a>
+                    <!--<a class="page-scroll" href="#portfolio">Events</a>-->
                 </li>
+
                 <li>
                     <!--							<a class="page-scroll" href="#contact">Contact</a>-->
                 </li>
