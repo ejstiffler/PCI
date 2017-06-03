@@ -105,29 +105,26 @@ if (isset($_POST['cnic'])) {
 
                                             </div>
                                         </div>
-                                <div class="form-group">
-                                    <div class="row padding-top-30">
-                                        <div class="col-md-12">
-                                            <input type="password" class="form-control" name="password" id="Password" placeholder="Password">
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div class="form-group">
-                                    <div class="row padding-top-30">
-                                        <div class="col-md-12">
-                                            <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                                   
+                                        <div class="form-group">
+                                            <div class="row padding-top-30">
+                                                <div class="col-md-12">
+                                                    <input type="password" class="form-control" name="password" id="Password" placeholder="Password">
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
 
-                                <div style="color:red">
-                                    <?= $message ?>
-                                </div>
+                                        <div class="form-group">
+                                            <div class="row padding-top-30">
+                                                <div class="col-md-12">
+                                                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                                                </div>
+                                            </div>
+                                        </div>
 
 
                                     </form>
-
                                 </div>
                             </div>
                         </div>

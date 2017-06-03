@@ -25,13 +25,6 @@
         <!-- Theme CSS -->
         <link href="css/creative.css" rel="stylesheet">
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-
     </head>
 
     <body id="page-top">
@@ -75,33 +68,97 @@
                         <h2 class="section-heading">Foreign Policy</h2>
                         <hr class="primary">
                     </div>
-                  
+
                 </div>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="service-box">
-                            <a href="ForeignPolicyGuidelines.html"><i class="fa fa-4x fa-diamond text-primary sr-icons"></i></a>
+                            <a href="ForeignPolicyGuidelines.php"><i class="fa fa-4x fa-diamond text-primary sr-icons"></i></a>
                             <h3>Guiding Principles of Pakistan’s Foreign Policy</h3>
                             <!--							<p class="text-muted">Our templates are updated regularly so they don't break.</p>-->
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="service-box">
-                            <a href="ForeignPolicyObjectives.html"><i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i></a>
+                            <a href="ForeignPolicyObjectives.php"><i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i></a>
                             <h3>Foreign Policy Objectives</h3>
                             <!--							<p class="text-muted">You can use this theme as is, or you can make changes!</p>-->
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 text-center">
                         <div class="service-box">
-                            <a href="ForeignPolicyPMGuidance.html"><i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i></a>
+                            <a href="ForeignPolicyPMGuidance.php"><i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i></a>
                             <h3>Prime Minister Guidance on Foreign Policy</h3>
                             <!--							<p class="text-muted">We update dependencies to keep things fresh.</p>-->
                         </div>
                     </div>
+
                 </div>
+            </div>
+        </section>
+
+        <section id="kashmir" class="bg-primary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h2 class="section-heading">Kashmir Dispute</h2>
+                        <hr class="light">
+                    </div>
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="row"> 
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="service-box">
+                            <a href="resolutionsOnKashmir.php"><i class="fa fa-4x fa-diamond text-white sr-icons"></i></a>
+                            <h3>Resolutons on Kashmir</h3>
+                            <!--							<p class="text-muted">Our templates are updated regularly so they don't break.</p>-->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="service-box">
+                            <a href="humanRightsViolations.php"><i class="fa fa-4x fa-paper-plane text-white sr-icons"></i></a>
+                            <h3>Human Rights Voilations in IOK</h3>
+                            <!--							<p class="text-muted">You can use this theme as is, or you can make changes!</p>-->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="service-box">
+                            <a href="ForeignPolicyPMGuidance.php"><i class="fa fa-4x fa-newspaper-o text-white sr-icons"></i></a>
+                            <h3>Gross Human Rights Violations in IOK since 8 July 2016</h3>
+                            <!--							<p class="text-muted">We update dependencies to keep things fresh.</p>-->
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="service-box">
+                            <a href="ForeignPolicyGuidelines.php"><i class="fa fa-4x fa-diamond text-white sr-icons"></i></a>
+                            <h3>Related Material</h3>
+                            <!--							<p class="text-muted">Our templates are updated regularly so they don't break.</p>-->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="service-box">
+                            <a href="ForeignPolicyObjectives.php"><i class="fa fa-4x fa-paper-plane text-white sr-icons"></i></a>
+                            <h3>Kashmir Events</h3>
+                            <!--							<p class="text-muted">You can use this theme as is, or you can make changes!</p>-->
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="service-box">
+                            <a href="ForeignPolicyPMGuidance.php"><i class="fa fa-4x fa-newspaper-o text-white sr-icons"></i></a>
+                            <h3>Kashmir Press Releases</h3>
+                            <!--							<p class="text-muted">We update dependencies to keep things fresh.</p>-->
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
         </section>
 

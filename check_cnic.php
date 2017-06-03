@@ -8,7 +8,7 @@ if (!empty($_POST["varnamecnic"])) {
     $strQuery = "SELECT count(*) as row1 FROM users WHERE CNIC='" . $_POST["varnamecnic"] . "'";
 
     $rs = mysqli_query($conn, $strQuery);
-    $row = mysqli_fetch_assoc($rs);
+    $row = mysqli_fetch_assoc($rs); // getting first row
     $user_count = $row['row1'];
 
     if ($user_count > 0) {
