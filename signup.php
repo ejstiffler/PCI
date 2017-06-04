@@ -36,7 +36,7 @@ if (isset($_POST['username'])) {
 	VALUES ('" . $username . "','" . $email . "','" . $cnic . "','" . $passport . "','" . $password . "')";
         if ($conn->query($sql) === TRUE) {  
 
-            $successMessage = "New record created successfully.";
+            $successMessage = "Congratulations! You have successfully registered.";
         } else {
             $successMessage = "<span>Error: " . $sql . "<br />" . $conn->error . "</span>";
         }
@@ -100,6 +100,7 @@ if (isset($_POST['username'])) {
                         <p>
                             <?= $successMessage ?>
                         </p>
+                        <p>You can <a href="login.php" style="color:white"> Login In Now</a></p>
                     </div>
                     <!--error message alert formation-->
                     <div class="alert alert-danger collapse" id="errorAlert">
