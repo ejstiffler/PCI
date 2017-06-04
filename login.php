@@ -13,6 +13,7 @@ if (isset($_POST['cnic'])) {
     $password = $_POST['password'];
 
     $str = "SELECT * FROM users WHERE CNIC='$cnic' && Password='$password' ";
+    echo $str;
     $sql = mysqli_query($conn, $str);
 
     if ($row = mysqli_fetch_assoc($sql)) {
@@ -21,7 +22,7 @@ if (isset($_POST['cnic'])) {
         if ($dbCnic == $cnic && $dbPassword == $password) {
             session_start();
             $_SESSION['UserName'] = $row['UserName'];
-            header('location:admin/index.html');
+            header('location:admin/index.php');
         }
     }
     if ($cnic != $dbCnic or $password != $dbPassword) {
