@@ -10,36 +10,12 @@ if (isset($_POST['username'])) {
     $passport = $_POST['passport'];
     $password = $_POST['password'];
 
-    $checkCNICsql = "SELECT CNIC FROM users WHERE CNIC='$cnic'"; // check if CNIC is already available in DB
-    $rsCNIC = mysqli_query($conn, $checkCNICsql); // running Query
-
-    $checkUserNamesql = "SELECT UserName FROM users WHERE UserName = '$username'"; // check if Usernameis already exists in DB
-    $rsUN = mysqli_query($conn, $checkUserNamesql);
-
-    $checkEmailsq = "SELECT Email FROM users WHERE Email = '$email'";
-    $rsEmail = mysqli_query($conn, $checkEmailsq);
-
-    $checkPassportsq = "SELECT Passport FROM users WHERE Passport = '$passport'";
-    $rsPassport = mysqli_query($conn, $checkPassportsq);
-
-    // check if SINGLE row is retreived or not for duplication purpose
-    if ($row = mysqli_fetch_assoc($rsCNIC)) {
-        $errorMessage = "CNIC alreay exists";
-    } else if ($row = mysqli_fetch_assoc($rsUN)) {
-        $errorMessage = "This user name alreay exists, try another one";
-    } else if ($row = mysqli_fetch_assoc($rsEmail)) {
-        $errorMessage = "Email ID alreay exists";
-    } else if ($row = mysqli_fetch_assoc($rsPassport)) {
-        $errorMessage = "This passport number alreay exists";
-    } else {
-        $sql = "INSERT INTO  users(UserName,Email,CNIC,Passport,Password)
+    $sql = "INSERT INTO  users(UserName,Email,CNIC,Passport,Password)
 	VALUES ('" . $username . "','" . $email . "','" . $cnic . "','" . $passport . "','" . $password . "')";
-        if ($conn->query($sql) === TRUE) {  
-
-            $successMessage = "Congratulations! You have successfully registered.";
-        } else {
-            $successMessage = "<span>Error: " . $sql . "<br />" . $conn->error . "</span>";
-        }
+    if ($conn->query($sql) === TRUE) {
+        $successMessage = "Congratulations! You have successfully registered.";
+    } else {
+        $successMessage = "<span>Error: " . $sql . "<br />" . $conn->error . "</span>";
     }
 }
 ?>
@@ -55,7 +31,7 @@ if (isset($_POST['username'])) {
         <meta name="description" content="">
         <meta name="author" content="">
 
-  
+
 
         <title>PCI - Sign Up</title>
 
@@ -322,7 +298,7 @@ if (isset($_POST['username'])) {
         } else {
             echo '<script type="text/javascript">$(function() { $("#successAlert").hide(); });</script>';
         }
-        
+
         if (isset($errorMessage) && strlen($errorMessage) > 1) {
             echo '<script type="text/javascript">$(function() { $("#errorAlert").slideDown(); });</script>';
         } else {
