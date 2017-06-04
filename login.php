@@ -21,7 +21,7 @@ if (isset($_POST['cnic'])) {
         if ($dbCnic == $cnic && $dbPassword == $password) {
             session_start();
             $_SESSION['UserName'] = $row['UserName'];
-            header('location:index.php');
+            header('location:admin/index.html');
         }
     }
     if ($cnic != $dbCnic or $password != $dbPassword) {
