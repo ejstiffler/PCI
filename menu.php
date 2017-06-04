@@ -31,21 +31,24 @@
                 if (isset($_SESSION['UserName'])) {
                     // logged in
                     ?>
-                <li>
+                    <li>
                         <a class = "page-scroll" href="personalInfo.php">Welcome <?= $_SESSION['UserName'] ?></a>
-                </li>
+                    </li>
+                    <li>
+                        <a class = "page-scroll" href="logout.php">Logout</a>
+                    </li>
                     <?php
                 } else {
                     ?>
-                <li>
-                    <a class = "page-scroll" href="login.php">Login</a>
-                </li>
-                <li>
-                    <a class = "page-scroll" href="SignUp.php">Sign Up</a>
-                </li>
-    <?php
-}
-?>
+                    <li>
+                        <a class = "page-scroll" href="login.php">Login</a>
+                    </li>
+                    <li>
+                        <a class = "page-scroll" href="SignUp.php">Sign Up</a>
+                    </li>
+                    <?php
+                }
+                ?>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
