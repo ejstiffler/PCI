@@ -172,12 +172,19 @@
                                     <div class="form-group">
                                         <h4><span class="glyphicon glyphicon-map-marker"></span> Set Location</h4>
 
-                                        <iframe id = "headOfficeLocationID" width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 	
-                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26550.652122607615!2d73.04505248973427!3d33.71330836474995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbf9bc116caa3%3A0x337cd6075e732737!2sBlue+Area%2C+Islamabad%2C+Pakistan!5e0!3m2!1sen!2s!4v1491401192197" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-                                        <p>1st Floor, Shakil Chambers, Khayaban-e-Suharwardy, 
-                                            Islamabad.
-                                        </p>
+                                        <section>
+                                            <div id='map_canvas'></div>
+                                            <div id="current">Nothing yet...</div>
+                                        </section>
+                                        <style>
+                                            #map_canvas {
+                                                width: 980px;
+                                                height: 500px;
+                                            }
+                                            #current {
+                                                padding-top: 25px;
+                                            }
+                                        </style>
 
                                     </div><!-- end tab-pane -->
                                     <div class="form-group">
@@ -231,6 +238,44 @@
         }
         ?>
 
-    </body>
+        <script>
+            var map, myMarker;
+            function initMap() {
+                map = new google.maps.Map(document.getElementById('map_canvas'), {
+                    zoom: 9,
+                    center: new google.maps.LatLng(32.100690, 13.464602),
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                });
 
+                myMarker = new google.maps.Marker({
+                    position: new google.maps.LatLng(32.100690, 13.464602),
+                    draggable: true
+                });
+
+                google.maps.event.addListener(myMarker, 'dragend', function (evt) {
+                    document.getElementById('current').innerHTML = '<p>Marker dropped: Current Lat: ' + evt.latLng.lat().toFixed(3) + ' Current Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
+                });
+
+                google.maps.event.addListener(myMarker, 'dragstart', function (evt) {
+                    document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
+                });
+
+                map.setCenter(myMarker.position);
+                myMarker.setMap(map);
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7FRZmWJD6hEcOhI6lHUue8d7gTcbANZ0&callback=initMap"></script>
+    </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
